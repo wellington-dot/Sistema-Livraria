@@ -1,5 +1,6 @@
 public class cadastrar {
     
+    private int idUsuario;
     private String nomeUsuario;
     private int idadeUsuario;
     private String telefoneUsuario;
@@ -7,14 +8,23 @@ public class cadastrar {
     private String emailUsuario;
     private int senhaUsuario;
     
-    public cadastrar(String nomeUsuario, int idadeUsuario, String telefoneUsuario, String cpfUsuario,
+    public cadastrar(int idUsuario, String nomeUsuario, int idadeUsuario, String telefoneUsuario, String cpfUsuario,
             String emailUsuario, int senhaUsuario) {
+        this.idUsuario = idUsuario;
         this.nomeUsuario = nomeUsuario;
         this.idadeUsuario = idadeUsuario;
         this.telefoneUsuario = telefoneUsuario;
         this.cpfUsuario = cpfUsuario;
         this.emailUsuario = emailUsuario;
         this.senhaUsuario = senhaUsuario;
+    }
+
+    public int getIdUsuario(){
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario){
+        this.idUsuario = idUsuario;
     }
 
     public String getNomeUsuario() {
@@ -67,7 +77,7 @@ public class cadastrar {
 
     @Override
     public String toString(){
-        return "Nome: "+ nomeUsuario + "\nIdade: " + idadeUsuario + 
+        return "id: " + idUsuario + "\nNome: "+ nomeUsuario + "\nIdade: " + idadeUsuario + 
                 "\nTelefone: " + telefoneUsuario + "\nCpf: " + cpfUsuario + 
                 "\nEmail: " + emailUsuario + "\nSenha: " + senhaUsuario;
     }

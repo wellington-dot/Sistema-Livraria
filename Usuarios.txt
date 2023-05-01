@@ -1,0 +1,16 @@
+-------------------------------
+Nome: wellington
+Idade: 22
+Telefone: 629444555
+Cpf: 12345678978
+Email: rwelitin@gmail.com
+Senha: 123456
+-------------------------------
+-------------------------------
+Nome: jao
+Idade: 45
+Telefone: 444555666
+Cpf: 78945612345
+Email: jao@gmail.com
+Senha: 123456
+-------------------------------

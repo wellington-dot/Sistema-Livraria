@@ -7,6 +7,7 @@ public class logar{
         for(int i=0; i<cadastrosUsuario.size(); i++){
             if(cadastrosUsuario.get(i).getEmailUsuario().equals(emailUsuario) && cadastrosUsuario.get(i).getSenhaUsuario() == senhaUsuario){
                 return i;
+
             }
         }
         return null;
@@ -15,6 +16,11 @@ public class logar{
     //Método retorna o nome do Usuário
     public String dadosUsuariosNome(ArrayList<cadastrar>cadastrosUsuario, int validacaoLogin){
         return(cadastrosUsuario.get(validacaoLogin).getNomeUsuario());
+    }
+
+    //Método retorna Id
+    public int idUsuario(ArrayList<cadastrar>cadastrosUsuario, int validacaoLogin){
+        return(cadastrosUsuario.get(validacaoLogin).getIdUsuario());
     }
 
 
