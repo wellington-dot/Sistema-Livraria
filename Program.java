@@ -12,6 +12,8 @@ public class Program {
         Scanner input = new Scanner(System.in);
 
         logar logar = new logar();
+        Livros livros = new Livros();
+        clearDisplay limpar = new clearDisplay();
         ArrayList<cadastrar> cadastrosUsuario = new ArrayList<>();
 
         boolean statusSistema = true;
@@ -33,7 +35,7 @@ public class Program {
             System.out.println("     AMAZING HISTORIES");
             System.out.println("-------------------------------");
             System.out.println("Bem vindo, oque deseja fazer?");
-            System.out.println("\n1.Logar \n2.Cadastrar \n3.Listar Usuários");
+            System.out.println("\n1.Logar \n2.Cadastrar Usuários \n3.Cadastrar Livros \n4.Listar Usuários \n5.Listar Livros ");
             System.out.println("-------------------------------");
             System.out.print("Escolha uma opção: ");
             
@@ -43,11 +45,8 @@ public class Program {
             if(opcoesInput == 1){
 
                 //Limpar tela
-                if (System.getProperty("os.name").contains("Windows")){
-                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                }   else{
-                    Runtime.getRuntime().exec("clear");
-                }
+                limpar.cleanDisplay();
+
                 String emailUsuario;
                 int senhaUsuario;
                 System.out.println("-------------------------------");
@@ -76,11 +75,8 @@ public class Program {
             
             } else if(opcoesInput == 2){
 
-                if (System.getProperty("os.name").contains("Windows")){
-                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                }   else{
-                    Runtime.getRuntime().exec("clear");
-                }
+                limpar.cleanDisplay();
+
                 //Variaveis auxiliares
                 String nomeUsuario;
                 int idadeUsuario;
@@ -92,7 +88,7 @@ public class Program {
                 System.out.println("-------------------------------");
                 System.out.println("Cadastrar-se:");
                 System.out.println("-------------------------------\n");
-                System.out.println("Id: ");
+                System.out.print("Id: ");
                 idUsuario = input.nextInt();
 
                 System.out.print("Nome: ");
@@ -136,13 +132,16 @@ public class Program {
 
                 try { Thread.sleep (3000); } catch (InterruptedException ex) { }
 
-                if (System.getProperty("os.name").contains("Windows")){
-                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                }   else{
-                    Runtime.getRuntime().exec("clear");
-                }
+                limpar.cleanDisplay();
 
             }else if(opcoesInput == 3){
+                limpar.cleanDisplay();
+            
+                livros.cadastrarLivros();
+            
+            
+            
+            } else if(opcoesInput == 4){
                 System.out.println("-------------------------------");
                 System.out.println("Lista de Usuários: ");
                 System.out.println("-------------------------------");
@@ -165,11 +164,7 @@ public class Program {
             System.out.println("\nPresione qualquer tecla para voltar ao inicio..");
             input.nextLine();
 
-            if (System.getProperty("os.name").contains("Windows")){
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            }   else{
-                Runtime.getRuntime().exec("clear");
-            }
+            limpar.cleanDisplay();
                 
             }else{
                 System.out.println("Resposta inválida.");

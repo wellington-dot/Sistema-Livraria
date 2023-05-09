@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Livros {
     private String nomeLivro;
     private String autorLivro;
@@ -5,54 +7,34 @@ public class Livros {
     private int paginasLivro;
     private String editoraLivro;
     
-    //Construtor
-    public Livros(String nomeLivro, String autorLivro, double precoLivro, int paginasLivro, String editoraLivro) {
-        this.nomeLivro = nomeLivro;
-        this.autorLivro = autorLivro;
-        this.precoLivro = precoLivro;
-        this.paginasLivro = paginasLivro;
-        this.editoraLivro = editoraLivro;
+    Scanner input = new Scanner(System.in);
+
+
+    public void cadastrarLivros(){
+        System.out.println("-------------------------------");
+        System.out.println("CADASTRAR LIVROS: ");
+        System.out.println("-------------------------------\n");
+        System.out.print("Nome: ");
+        this.nomeLivro = input.nextLine();
+
+        System.out.print("Autor: ");
+        this.autorLivro = input.nextLine();
+
+        System.out.print("Preço: ");
+        this.precoLivro = input.nextDouble();
+
+        System.out.print("Páginas: ");
+        this.paginasLivro = input.nextInt();
+        input.nextLine();
+
+        System.out.print("Editora: ");
+        this.editoraLivro = input.nextLine();
+
+
+
+
+
     }
 
-    //Getters e Setters
-    public String getNomeLivro() {
-        return nomeLivro;
-    }
-
-    public void setNomeLivro(String nomeLivro) {
-        this.nomeLivro = nomeLivro;
-    }
-
-    public String getAutorLivro() {
-        return autorLivro;
-    }
-
-    public void setAutorLivro(String autorLivro) {
-        this.autorLivro = autorLivro;
-    }
-
-    public double getPrecoLivro() {
-        return precoLivro;
-    }
-
-    public void setPrecoLivro(double precoLivro) {
-        this.precoLivro = precoLivro;
-    }
-
-    public int getPaginasLivro() {
-        return paginasLivro;
-    }
-
-    public void setPaginasLivro(int paginasLivro) {
-        this.paginasLivro = paginasLivro;
-    }
-
-    public String getEditoraLivro() {
-        return editoraLivro;
-    }
-
-    public void setEditoraLivro(String editoraLivro) {
-        this.editoraLivro = editoraLivro;
-    }  
 
 }
