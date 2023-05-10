@@ -12,13 +12,13 @@ public class Program {
         Scanner input = new Scanner(System.in);
 
         logar logar = new logar();
-        Livros livros = new Livros();
+        interfaceCadastro cadastro = new interfaceCadastro();
+        interfaceLivraria livros = new interfaceLivraria();
         clearDisplay limpar = new clearDisplay();
-        ArrayList<cadastrar> cadastrosUsuario = new ArrayList<>();
-
+        
         boolean statusSistema = true;
         int opcoesInput;
-        int idUsuario;
+        
 
         //Criando o arquivo
         try {
@@ -69,68 +69,20 @@ public class Program {
                     dadoNome = logar.dadosUsuariosNome(cadastrosUsuario, validacaoLogin); 
                     System.out.println("Bem vindo Sr(a): " + dadoNome);
                 }
-
                 idUsuario = logar.idUsuario(cadastrosUsuario, validacaoLogin);
                 
             
             } else if(opcoesInput == 2){
-
                 limpar.cleanDisplay();
 
-                //Variaveis auxiliares
-                String nomeUsuario;
-                int idadeUsuario;
-                String telefoneUsuario;
-                String cpfUsuario;
-                String emailUsuario;
-                int senhaUsuario;
+                cadastro.cadastrarUsuarios();
 
-                System.out.println("-------------------------------");
-                System.out.println("Cadastrar-se:");
-                System.out.println("-------------------------------\n");
-                System.out.print("Id: ");
-                idUsuario = input.nextInt();
-
-                System.out.print("Nome: ");
-                nomeUsuario = input.nextLine();
-
-                System.out.print("Idade: ");
-                idadeUsuario = input.nextInt();
-                input.nextLine();
-
-                System.out.print("Telefone: ");
-                telefoneUsuario = input.nextLine();
-
-                System.out.print("Cpf: ");
-                cpfUsuario = input.nextLine();
-
-                System.out.print("Email: ");
-                emailUsuario = input.nextLine();
-
-                System.out.print("Senha: ");
-                senhaUsuario = input.nextInt();
-                input.nextLine();
-                System.out.println("-------------------------------");
-
-                cadastrar infoUsuario = new cadastrar(idUsuario, nomeUsuario, idadeUsuario, telefoneUsuario, cpfUsuario, emailUsuario, senhaUsuario);
-
-                cadastrosUsuario.add(infoUsuario);
-
-                //Salvar cadastro no arquivo
-                try(FileWriter fw = new FileWriter("C:/Users/rweli/Desktop/CÓDIGOS/Vs Code/java/SistemaLivraria/Usuarios.txt", true);
-                    BufferedWriter bw = new BufferedWriter(fw);
-                    PrintWriter out = new PrintWriter(bw))
-                {
-                    out.println("-------------------------------\n" + 
-                                "Nome: " + nomeUsuario + "\nIdade: " + idadeUsuario + 
-                                    "\nTelefone: " + telefoneUsuario + "\nCpf: " + cpfUsuario + 
-                                        "\nEmail: " + emailUsuario + "\nSenha: " + senhaUsuario + 
-                                            "\n-------------------------------");
-                } catch (IOException e) {
-                    System.out.println("Nao conseguiu salvar");
-                }
+                System.out.println("\nCadastro concluido!");
 
                 try { Thread.sleep (3000); } catch (InterruptedException ex) { }
+
+                System.out.println("\nPresione qualquer tecla para voltar ao inicio..");
+                input.nextLine();
 
                 limpar.cleanDisplay();
 
@@ -138,10 +90,19 @@ public class Program {
                 limpar.cleanDisplay();
             
                 livros.cadastrarLivros();
-            
-            
-            
+
+                System.out.println("\nCadastro concluido!");
+
+                try { Thread.sleep (3000); } catch (InterruptedException ex) { }
+
+                System.out.println("\nPresione qualquer tecla para voltar ao inicio..");
+                input.nextLine();
+
+                limpar.cleanDisplay();
+                
             } else if(opcoesInput == 4){
+                limpar.cleanDisplay();
+
                 System.out.println("-------------------------------");
                 System.out.println("Lista de Usuários: ");
                 System.out.println("-------------------------------");
@@ -157,21 +118,22 @@ public class Program {
                 } catch (FileNotFoundException e) {
                     System.out.println("An error occurred.");
                     e.printStackTrace();
-            }
+                }
 
-            try { Thread.sleep (3000); } catch (InterruptedException ex) { }
+                try { Thread.sleep (3000); } catch (InterruptedException ex) { }
 
-            System.out.println("\nPresione qualquer tecla para voltar ao inicio..");
-            input.nextLine();
+                System.out.println("\nPresione qualquer tecla para voltar ao inicio..");
+                input.nextLine();
 
-            limpar.cleanDisplay();
+                limpar.cleanDisplay();
                 
             }else{
-                System.out.println("Resposta inválida.");
-            }
-            
-
-
+                limpar.cleanDisplay();
+                System.out.println("\nOpção inválida.");
+                System.out.println("\nRetornando ao menu em 3 segundos..");
+                try { Thread.sleep (3000); } catch (InterruptedException ex) { }
+                limpar.cleanDisplay();
+            }          
 
         }while(statusSistema == true);
 
