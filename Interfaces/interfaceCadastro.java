@@ -1,4 +1,9 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class interfaceCadastro {
     
@@ -20,6 +25,7 @@ public class interfaceCadastro {
         System.out.println("-------------------------------\n");
         System.out.print("Id: ");
         idUsuario = input.nextInt();
+        input.nextLine();
 
         System.out.print("Nome: ");
         nomeUsuario = input.nextLine();

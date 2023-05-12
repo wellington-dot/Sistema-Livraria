@@ -11,7 +11,7 @@ public class Program {
     public static void main(String[] args) throws IOException, InterruptedException{
         Scanner input = new Scanner(System.in);
 
-        logar logar = new logar();
+        interfaceLogin login = new interfaceLogin();
         interfaceCadastro cadastro = new interfaceCadastro();
         interfaceLivraria livros = new interfaceLivraria();
         clearDisplay limpar = new clearDisplay();
@@ -47,30 +47,14 @@ public class Program {
                 //Limpar tela
                 limpar.cleanDisplay();
 
-                String emailUsuario;
-                int senhaUsuario;
-                System.out.println("-------------------------------");
-                System.out.println("LOGAR-SE: ");
-                System.out.println("-------------------------------\n");
-                System.out.print("Seu email: ");
-                emailUsuario = input.nextLine();
-
-                System.out.print("Sua Senha: ");
-                senhaUsuario = input.nextInt();
-                input.nextLine();
-                System.out.println("-------------------------------");
-
-                Integer validacaoLogin = logar.validacaoLogin(cadastrosUsuario ,emailUsuario, senhaUsuario);
-
-                if(validacaoLogin == null){
-                    System.out.println("Este login não existe.");
-                } else {
-                    String dadoNome;
-                    dadoNome = logar.dadosUsuariosNome(cadastrosUsuario, validacaoLogin); 
-                    System.out.println("Bem vindo Sr(a): " + dadoNome);
-                }
-                idUsuario = logar.idUsuario(cadastrosUsuario, validacaoLogin);
+                login.verificacaoLogin();
                 
+                try { Thread.sleep (3000); } catch (InterruptedException ex) { }
+
+                System.out.println("\nPresione qualquer tecla para voltar ao inicio..");
+                input.nextLine();
+
+                limpar.cleanDisplay(); 
             
             } else if(opcoesInput == 2){
                 limpar.cleanDisplay();

@@ -9,7 +9,7 @@ public class cadastrar {
     private int senhaUsuario;
     
     public cadastrar(int idUsuario, String nomeUsuario, int idadeUsuario, String telefoneUsuario, String cpfUsuario,
-            String emailUsuario, int senhaUsuario) {
+        String emailUsuario, int senhaUsuario) {
         this.idUsuario = idUsuario;
         this.nomeUsuario = nomeUsuario;
         this.idadeUsuario = idadeUsuario;
