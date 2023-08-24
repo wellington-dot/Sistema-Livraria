@@ -8,7 +8,7 @@ import java.io.BufferedWriter;
 import java.io.PrintWriter;
 
 public class Program {
-    public static void main(String[] args) throws IOException, InterruptedException{
+    public static void main(String args[]) throws IOException, InterruptedException{
         Scanner input = new Scanner(System.in);
 
         interfaceLogin login = new interfaceLogin();
